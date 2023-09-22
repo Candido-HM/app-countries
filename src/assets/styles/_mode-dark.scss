@@ -1,5 +1,28 @@
-
+// Estilo modo Oscuro
 .dark {
-    background-color: #202D36;
-    color: $white;
+    background-color: $very-dark-blue;
+    .menu{
+        background-color: $dark-blue;
+        ul{
+            .redirection{
+                a{
+                    color: $white;
+                }
+            }
+            .btn-list{
+                .btn-theme {
+                    background: url('../img/icon-dark.svg');
+                    filter: invert(1);
+                    background-repeat: no-repeat;
+                    background-position: 0% 50%;
+                    background-size: 25px 25px;
+                    &::after {
+                        content: "Dark Mode";
+                        width: 50px;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+    }
 }

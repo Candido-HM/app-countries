@@ -1,4 +1,27 @@
-
+// Estilos modo claro
 .light {
-    background-color: #FAFAFA;
+    background-color: $very-ligh-gray;
+    .menu{
+        background-color: $white;
+        ul{
+            .redirection{
+                a{
+                    color: $very-dark-blue-2;
+                }
+            }
+            .btn-list{
+                .btn-theme {
+                    background: url('../img/icon-light.svg');
+                    background-repeat: no-repeat;
+                    background-position: 0% 50%;
+                    background-size: 25px 25px;
+                    &::after {
+                        content: "Light Mode";
+                        width: 50px;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+    }
 }
