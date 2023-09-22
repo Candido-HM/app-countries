@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* Módulos Estilos */
+$dark-blue: hsl(209, 23%, 22%);
+$very-dark-blue: hsl(207, 26%, 17%);
+$very-dark-blue-2: hsl(200, 15%, 8%);
+$dark-gray: hsl(0, 0%, 52%);
+$very-ligh-gray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+@import './assets/styles/base';
+@import './assets/styles/mode-light';
+@import './assets/styles/mode-dark';
+@import './assets/styles/mobile-first';
