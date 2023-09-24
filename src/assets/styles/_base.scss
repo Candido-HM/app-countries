@@ -5,9 +5,22 @@
 // Variables
 $style-letter: 'Nunito Sans', Arial, Helvetica;
 
+//Mixins
+@mixin centrar(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centrar-col(){
+    display: flex;
+    justify-content: center;
+}
+
 *{
     padding: 0px;
     margin: 0px;
+    border-style: none;
 }
 
 body {
@@ -22,7 +35,7 @@ body {
 
         ul {
             width: auto;
-            padding: 10px;
+            padding: 15px;
             display: flex;
             flex-direction: row;
             li {
@@ -43,7 +56,6 @@ body {
                 .btn-theme {
                     width: 130px;
                     height: 50px;
-                    border-style: none;
                     font-size: 15px;
                     font-weight: 600;
                 }
@@ -51,11 +63,53 @@ body {
         }
     }
 
-    .search {
-        background-color: white;
-        padding-left: 20px;
-        background-image: url('../img/icon-search.svg');
-        background-repeat: no-repeat;
+    .query-bar {
+        width: auto;
+        padding: 15px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        .section-search {
+            width: auto;
+            @include centrar-col();
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            .container-figure {
+                width: 100%;
+                display: inline-flex;
+                border-radius: 10px;
+                overflow: hidden;
+                .icon-search{
+                    width: 50px;
+                    height: 50px;
+                    @include centrar();
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                .search {
+                    width: 100%;
+                    text-align: center;
+                    line-height: 25px;
+                    font-weight: 300;
+                    font-size: 16px;
+                    background-color: transparent;
+                }
+            } 
+        }
+        .select-region {
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            font-weight: 300;
+            font-size: 16px;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            option {
+                height: inherit;
+            }
+        }
     }
-   
 }

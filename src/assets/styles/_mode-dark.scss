@@ -3,6 +3,7 @@
     background-color: $very-dark-blue;
     .menu{
         background-color: $dark-blue;
+        box-shadow: 0px 10px 10px 5px #1F2A35;
         ul{
             .redirection{
                 a{
@@ -18,10 +19,38 @@
                     background-size: 25px 25px;
                     &::after {
                         content: "Dark Mode";
-                        width: 50px;
                         padding-left: 15px;
                     }
                 }
+            }
+        }
+    }
+    .query-bar {
+        .section-search {
+            box-shadow: 0px 10px 10px 5px #1F2A35;
+            .container-figure {
+                background-color: $dark-blue;
+                .icon-search{
+                    img {
+                        filter: invert(1);
+                    }
+                }
+                .search {
+                    background-color: $dark-blue;
+                    color: $white;
+                }
+                ::placeholder {
+                    color: $white;
+                }
+            }
+        }
+        .select-region {
+            background-color: $dark-blue;
+            color: $white;
+            box-shadow: 0px 10px 10px 5px #1F2A35;
+            option {
+                background-color: $dark-blue;
+                box-shadow: 0px 10px 10px 5px #1F2A35;
             }
         }
     }

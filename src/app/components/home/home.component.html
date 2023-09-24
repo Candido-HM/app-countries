@@ -1,1 +1,23 @@
-<input type="search" class="search" id="search" placeholder="Search for a country...">
+<article class="query-bar">
+    <section class="section-search">
+        <div class="container-figure">
+            <figure class="icon-search">
+                <img src="../../../assets/img/icon-search.svg" alt="search">
+            </figure>
+            <input #search (keyup)="buscar(search.value)" type="search" class="search" id="search" placeholder="Search for a country...">
+        </div>
+    </section>
+
+    <select #region (click)="selection(region.value)" class="select-region" name="region" id="region">
+        <option value="selecciona">Filter by Region</option>
+        <option *ngFor="let region of regiones" value="{{region}}">{{ region }}</option>
+    </select>
+</article>
+
+<div style="width: 1300px; height: 150px; background-color: aqua; margin-bottom: 5px;" class="tarjetas" 
+*ngFor="let countrie of countries">
+    <h1 style="color: blueviolet;">{{ countrie.name.common }}</h1>
+    <h3>Population: {{ countrie.population }}</h3>
+    <h3>Region: {{ countrie.region }}</h3>
+    <h3>Capital: {{ countrie.capital }}</h3>
+</div>
