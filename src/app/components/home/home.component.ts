@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   public countries: Countrie[];
   public url: string;
+  public randomCountryIndices: number[] = [];
 
   public regiones = [ 'Africa', 'America', 'Asia', 'Europa', 'Oceania'];
 
@@ -38,10 +39,34 @@ export class HomeComponent implements OnInit {
       response  => {
         this.countries = response;
         console.log(this.countries);
+
+        // Generar índices aleatorios para seleccionar países
+        this.randomContries(16); // Puedes ajustar la cantidad deseada
+        
+        // Mostrar países aleatorios
+        this.showRandomCountries();
       },
       error => {
         console.log(<any>error);
       }
     );
+  }
+
+  randomContries(count: number){
+    // Genera índices aleatorios únicos
+    const totalCountries = this.countries.length;
+    const allIndices = Array.from({ length: totalCountries }, (_, i) => i);
+    this.randomCountryIndices = [];
+
+    for (let i = 0; i < count; i++) {
+      const randomIndex = Math.floor(Math.random() * (totalCountries - i));
+      this.randomCountryIndices.push(allIndices.splice(randomIndex, 1)[0]);
+    }
+  }
+
+  showRandomCountries() {
+    // Muestra solo los países seleccionados aleatoriamente
+    const randomCountries = this.randomCountryIndices.map(index => this.countries[index]);
+    this.countries = randomCountries;
   }
 }

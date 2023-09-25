@@ -112,4 +112,48 @@ body {
             }
         }
     }
+    .container-countries{
+        width: auto;
+        height: auto;
+        padding: 15px;
+        .list-countries{
+            width: auto;
+            height: auto;
+            .country-card{
+                width: auto;
+                height: auto;
+                border-radius: 5px;
+                overflow: auto;
+                background-color: gray;
+                margin-bottom: 50px;
+                .figure-country{
+                    width: auto;
+                    height: auto;
+                    margin-bottom: 20px;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .info-country{
+                    width: auto;
+                    height: auto;
+                    padding: 20px;
+                    margin-bottom: 30px;
+                    h2{
+                        font-weight: 800;
+                        font-size: 20px;
+                        margin-bottom: 15px;
+                    }
+                    p{
+                        strong{
+                            font-weight: 600;
+                        }
+                        margin-top: 0px;
+                        font-weight: 300;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
 }

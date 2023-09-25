@@ -54,4 +54,15 @@
             }
         }
     }
+    .container-countries{
+        .list-countries{
+            .country-card{
+                background-color: $dark-blue;
+                box-shadow: 0px 10px 10px 5px #1F2A35;
+                .info-country{
+                    color: $white;
+                }
+            }
+        }
+    }
 }

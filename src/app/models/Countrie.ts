@@ -9,7 +9,11 @@ export class Countrie{
     public subRregion: string,
     public topLevelDomain: string,
     public currencies: string,
-    public languages: string
+    public languages: string,
+    public flags: {
+        png: string,
+        svg: string
+    }
     )
     { }
 }
