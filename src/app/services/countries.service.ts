@@ -16,8 +16,12 @@ export class CountriesService {
    }
 
    getCountries(): Observable <any> {
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    
+    let headers = new HttpHeaders().set('Content-Type', 'application/json'); 
     return this._http.get(this.url+'all', {headers: headers});
+   }
+
+   getCountrie(name: string): Observable <any> {
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this._http.get(this.url+`name/${ name }`, {headers: headers});
    }
 }

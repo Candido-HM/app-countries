@@ -1,0 +1,15 @@
+<article class="container-countries">
+    <div class="list-countries">
+        <section class="country-card" *ngFor="let countrie of countries">
+            <figure class="figure-country">
+                <img src="{{ countrie.flags.png }}" alt="{{ countrie.name.common }}">
+            </figure>
+            <section class="info-country">
+                <h2>{{ countrie.name.common }}</h2>
+                <p><strong>Population:</strong> {{ countrie.population | number }}</p> <br>
+                <p><strong>Region:</strong> {{ countrie.region }}</p> <br>
+                <p><strong>Capital:</strong> {{ countrie.capital }}</p>
+            </section>
+        </section>
+    </div>
+</article>

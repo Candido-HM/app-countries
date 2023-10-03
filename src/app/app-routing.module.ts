@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { SearchesComponent } from './components/searches/searches.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'countrie/:termino', component: SearchesComponent},
   { path: '' , pathMatch: 'full', redirectTo: 'home'},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
