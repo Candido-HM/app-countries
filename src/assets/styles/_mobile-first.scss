@@ -15,6 +15,7 @@
         .container-countries {
             display: flex;
             justify-content: center;
+            padding: 10px;
             .list-countries{
                 width: 90%;
             }
@@ -24,12 +25,39 @@
 
 @media screen and (min-width: 640px) {
     body {
+        .query-bar {
+            padding: 40px;
+        }
         .container-countries {
             .list-countries {
                 justify-content: space-between;
                 .country-card {
                     width: calc(50% - 15px);
                 }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        .query-bar {
+            flex-direction: row;
+            justify-content: flex-end;
+            // background-color: blueviolet !important;
+            .section-search {
+                width: 100%;
+                padding-right: 20px;
+                // background-color: saddlebrown !important;
+                .container-figure {
+                    width: 100%;
+                    // background-color: red !important;
+                }
+            }
+            .select-region {
+                width: 40%;
+                margin-left: 50px; 
+                // background-color: aqua !important;
             }
         }
     }
