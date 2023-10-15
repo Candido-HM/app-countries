@@ -10,27 +10,24 @@ import { Countrie } from 'src/app/models/Countrie';
 export class HomeComponent {
 
   public countries: Countrie[];
-  public filtrarTxt = '';
-  public arrayFiltro: Countrie[];
 
   public regiones = [ 'Africa', 'America', 'Asia', 'Europa', 'Oceania'];
 
   constructor(private _countriesService: CountriesService){
     this.countries = [];
-    this.arrayFiltro = [];
     // this.url = Global.url;
   }
 
   ngOnInit(): void {
-    // this.getCountries();
+    console.log(this.countries);
   }
 
   buscar( search: string ) {
-    
     // this._countriesService.getCountrie(search).subscribe( (response : any) => {
-    //   this.countries = response;
-    //   console.table(this.countries);
+      // this.countries = response;
+      // console.table(this.countries);
     // })
+    console.log(search);
   }
 
   selection( region: string ) {

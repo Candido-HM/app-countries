@@ -29,7 +29,6 @@ export class CardsComponent implements OnInit {
     this._countriesService.getCountries().subscribe(
       response  => {
         this.countries = response;
-        // console.log(this.countries);
 
         // Generar índices aleatorios para seleccionar países
         this.randomContries(16); // Puedes ajustar la cantidad deseada

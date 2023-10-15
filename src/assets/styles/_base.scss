@@ -119,8 +119,10 @@ body {
         .list-countries{
             width: auto;
             height: auto;
+            display: flex;
+            flex-wrap: wrap;
             .country-card{
-                width: auto;
+                width: 100%;
                 height: auto;
                 border-radius: 5px;
                 overflow: auto;
