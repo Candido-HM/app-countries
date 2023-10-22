@@ -10,7 +10,7 @@ import { SearchService } from 'src/app/services/search.service';
   styleUrls: ['./cards.component.scss'],
   providers: [CountriesService]
 })
-export class CardsComponent implements OnInit, AfterViewInit{
+export class CardsComponent implements OnInit{
   public countries: Countrie[];
   public url: string;
   public randomCountryIndices: number[] = [];
@@ -26,19 +26,21 @@ export class CardsComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     this.getCountries();
-  }
-
-  ngAfterViewInit(): void {
     this._searchService.textObservable.subscribe(text => {
       this.getCountrie(text);
-    })
+      if(text === '') {
+        this.getCountries();
+      }
+    })   
   }
+
 
   filter(characters: string){
     this.text += characters
     if(characters !== ''&& characters.length >=2){
       this.getCountrie(characters);
-    } else if (this.text === '') {
+    } 
+    else if (this.text === '') {
       this.getCountries();
     }
   }

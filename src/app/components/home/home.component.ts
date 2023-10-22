@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { SearchService } from 'src/app/services/search.service';
 // import { Countrie } from 'src/app/models/Countrie';
 // import { Global } from 'src/app/services/global';
-import { debounceTime, distinctUntilChanged, fromEvent, map } from 'rxjs';
+import { debounceTime, distinctUntilChanged, fromEvent, map, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +27,7 @@ export class HomeComponent implements AfterViewInit {
     fromEvent<any>(this.inputSearch?.nativeElement, 'keyup')
     .pipe(
       map(event => event?.target.value),
+      startWith(''),
       debounceTime(200),
       distinctUntilChanged()
     ).subscribe(text => this._searchService.emitText(text))
