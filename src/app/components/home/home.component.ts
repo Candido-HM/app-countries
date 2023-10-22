@@ -1,33 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { CountriesService } from 'src/app/services/countries.service';
-import { Countrie } from 'src/app/models/Countrie';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { SearchService } from 'src/app/services/search.service';
+// import { Countrie } from 'src/app/models/Countrie';
+// import { Global } from 'src/app/services/global';
+import { debounceTime, distinctUntilChanged, fromEvent, map } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
 
-  public countries: Countrie[];
+  @ViewChild('searchInput')
+  inputSearch?: ElementRef;
+  // public countries: Countrie[];
+  // public url: string;
 
   public regiones = [ 'Africa', 'America', 'Asia', 'Europa', 'Oceania'];
 
-  constructor(private _countriesService: CountriesService){
-    this.countries = [];
+  constructor(private _searchService: SearchService){
+    // this.countries = [];
     // this.url = Global.url;
   }
 
-  ngOnInit(): void {
-    console.log(this.countries);
+  ngAfterViewInit(): void {
+    fromEvent<any>(this.inputSearch?.nativeElement, 'keyup')
+    .pipe(
+      map(event => event?.target.value),
+      debounceTime(200),
+      distinctUntilChanged()
+    ).subscribe(text => this._searchService.emitText(text))
   }
 
-  buscar( search: string ) {
-    // this._countriesService.getCountrie(search).subscribe( (response : any) => {
-      // this.countries = response;
-      // console.table(this.countries);
-    // })
-    console.log(search);
+  ngOnInit(): void {
+    this._searchService.textObservable.subscribe()
   }
 
   selection( region: string ) {

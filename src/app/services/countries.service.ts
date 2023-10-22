@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Global } from './global';
 
@@ -24,4 +24,5 @@ export class CountriesService {
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this._http.get(this.url+`name/${ name }`, {headers: headers});
    }
+  
 }
