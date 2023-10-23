@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { CountrieComponent } from './components/countrie/countrie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    CardsComponent
+    CardsComponent,
+    CountrieComponent
   ],
   imports: [
     BrowserModule,

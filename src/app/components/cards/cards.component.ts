@@ -3,6 +3,7 @@ import { CountriesService } from 'src/app/services/countries.service';
 import { Countrie } from 'src/app/models/Countrie';
 import { Global } from 'src/app/services/global';
 import { SearchService } from 'src/app/services/search.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -18,7 +19,8 @@ export class CardsComponent implements OnInit{
   text: string = '';
 
   constructor(private _countriesService: CountriesService,
-              private _searchService: SearchService){
+              private _searchService: SearchService,
+              private router: Router){
     this.countries = [];
     this.url = Global.url;
 
@@ -89,6 +91,13 @@ export class CardsComponent implements OnInit{
         console.log(<any>error);
       }
     )
+  }
+
+  viewCountrie(name: string){
+    let nameCoutrie;
+    nameCoutrie = name;
+    this.router.navigate(['/countrie', nameCoutrie]);
+    console.log('Yo soy: '+name);
   }
 
 }
