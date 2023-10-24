@@ -97,7 +97,6 @@ export class CardsComponent implements OnInit{
     let nameCoutrie;
     nameCoutrie = name;
     this.router.navigate(['/countrie', nameCoutrie]);
-    console.log('Yo soy: '+name);
   }
 
 }
