@@ -1,7 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
-// import { Countrie } from 'src/app/models/Countrie';
-// import { Global } from 'src/app/services/global';
 import { debounceTime, distinctUntilChanged, fromEvent, map, startWith } from 'rxjs';
 
 @Component({
@@ -13,14 +11,10 @@ export class HomeComponent implements AfterViewInit {
 
   @ViewChild('searchInput')
   inputSearch?: ElementRef;
-  // public countries: Countrie[];
-  // public url: string;
 
   public regiones = [ 'Africa', 'America', 'Asia', 'Europa', 'Oceania'];
 
   constructor(private _searchService: SearchService){
-    // this.countries = [];
-    // this.url = Global.url;
   }
 
   ngAfterViewInit(): void {

@@ -1,9 +1,9 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountriesService } from 'src/app/services/countries.service';
 import { Countrie } from 'src/app/models/Countrie';
 import { Global } from 'src/app/services/global';
 import { SearchService } from 'src/app/services/search.service';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -23,7 +23,6 @@ export class CardsComponent implements OnInit{
               private router: Router){
     this.countries = [];
     this.url = Global.url;
-
   }
 
   ngOnInit(): void {
@@ -86,6 +85,7 @@ export class CardsComponent implements OnInit{
     this._countriesService.getCountrie(name).subscribe(
       response => {
         this.countries = response
+        console.log(this.countries);
       },
       error => {
         console.log(<any>error);
