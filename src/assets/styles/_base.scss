@@ -25,7 +25,7 @@ $style-letter: 'Nunito Sans', Arial, Helvetica;
 
 body {
     width: auto;
-    height: 100vh;
+    height: auto;
     font-family: $style-letter;
 
     .menu {
@@ -167,7 +167,7 @@ body {
     .section-btn-return {
         width: auto;
         height: 80px;
-        padding: 10px;
+        padding: 15px;
         margin-top: -15px;
         display: flex;
         align-items: center;
@@ -189,6 +189,25 @@ body {
         .btn-return:hover {
             cursor: pointer;
             transform: scale(1.1,1.1);
+        }
+    }
+    .article-countrie {
+        width: auto;
+        height: auto;
+        // background-color: aqua;
+        .section-countrie {
+            width: auto;
+            padding: 15px;
+            // background-color: violet;
+            .flag-countrie{
+                width: auto;
+                height: auto;
+                // background-color: yellow;
+                .img-flag {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
     }
 }

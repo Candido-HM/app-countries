@@ -2,9 +2,31 @@
     <button class="btn-return" routerLink="/home"></button>
 </section>
 
-<article>
-    <h1>Pais: {{ countrie?.name?.common }}</h1>
-
-    <h3> Population: {{ countrie.population}}</h3>
-
+<article class="article-countrie">
+    <section class="section-countrie">
+        <figure class="flag-countrie">
+            <img class="img-flag" src="{{ countrie?.flags?.svg }}" alt="{{ countrie?.name?.common }}">
+        </figure>
+        <section class="section-countrie">
+            <div class="info-countrie">
+                <div class="countrie-name">
+                    <h1>{{ countrie?.name?.common }}</h1>
+                    <p><strong>Native Name: </strong>{{ countrie?.name?.official }}</p>
+                    <p><strong>Population: </strong>{{ countrie.population | number }}</p>
+                    <p><strong>Region: </strong>{{ countrie.region }}</p>
+                    <p><strong>Sub Region: </strong>{{ countrie.subregion }}</p>
+                    <p><strong>Capital: </strong>{{ countrie.capital }}</p>
+                </div>
+                <div class="countrie-lenguages">
+                    <p><strong>Top Level Domain: </strong>{{ countrie.tld }}</p>
+                    <p *ngFor="let currencie of countrie.currencies | keyvalue "><strong>Currencies: </strong>{{ currencie.key }}</p>
+                    <p *ngFor="let language of countrie.languages | keyvalue"><strong>Languages: </strong>{{ language.key }}</p>   
+                </div>
+            </div>
+            <div class="section-borders">
+                <button *ngFor="let border of countrie.borders">{{ border }}</button>
+            </div>
+           
+        </section>
+    </section>
 </article>

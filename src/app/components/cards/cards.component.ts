@@ -85,7 +85,6 @@ export class CardsComponent implements OnInit{
     this._countriesService.getCountrie(name).subscribe(
       response => {
         this.countries = response
-        console.log(this.countries);
       },
       error => {
         console.log(<any>error);

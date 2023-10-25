@@ -15,5 +15,6 @@ export class Countrie{
         svg: string
     }
     )
-    { }
+    {
+     }
 }
