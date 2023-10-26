@@ -63,6 +63,13 @@ body {
         }
     }
 
+    // Fijar el menu en la parte superior
+    .fixed-menu{
+        position: fixed !important;
+        width: 100%;
+        z-index: 1;
+    }
+
     .query-bar {
         width: auto;
         padding: 15px;
@@ -135,6 +142,7 @@ body {
                     margin-bottom: 20px;
                     img{
                         width: 100%;
+                        height: 260px;
                     }
                 }
                 .info-country{
@@ -194,18 +202,77 @@ body {
     .article-countrie {
         width: auto;
         height: auto;
-        // background-color: aqua;
+        padding: 15px;
         .section-countrie {
             width: auto;
-            padding: 15px;
-            // background-color: violet;
             .flag-countrie{
                 width: auto;
                 height: auto;
-                // background-color: yellow;
+                margin-bottom: 30px;
                 .img-flag {
                     width: 100%;
                     height: 100%;
+                }
+            }
+            .details-countrie {
+                width: 100%;
+                .info-countrie {
+                    width: auto;
+                    height: auto;
+                    margin-bottom: 20px;
+                    .countrie-name {
+                        margin-bottom: 50px;
+                        h1 {
+                            font-size: 30px;
+                            font-weight: 800;
+                            margin-bottom: 30px;
+                        }
+                        .native-name, .population,
+                        .region, .sub-region,
+                        .capital{
+                            font-size: 20px;
+                            margin-bottom: 15px;
+                            span {
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                    .countrie-lenguages {
+                        margin-bottom: 50px;
+                        .top-domain, .currencie, .language {
+                            font-size: 20px;
+                            margin-bottom: 15px;
+                            span {
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+                .section-borders {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 50px;
+                    .border-countrie {
+                        font-size: 22px;
+                        margin-bottom: 20px;
+                    }
+                    .container-buttons {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        .btn-borders {
+                            width: calc(33.3% - 10px);
+                            padding: 10px;
+                            font-weight: 300;
+                            margin-bottom: 15px;
+                        }
+                        .btn-borders:hover {
+                            transform: scale(1.1,1.1);
+                            cursor: pointer;
+                        }
+                    }
+                   
                 }
             }
         }

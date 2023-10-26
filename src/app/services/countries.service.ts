@@ -24,5 +24,10 @@ export class CountriesService {
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this._http.get(this.url+`name/${ name }`, {headers: headers});
    }
+//https://restcountries.com/v3.1/alpha/USA
+   getCountrieCode(code : string): Observable <any> {
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this._http.get(this.url+`alpha/${ code }`, {headers: headers});
+   }
   
 }

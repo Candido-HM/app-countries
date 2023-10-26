@@ -18,7 +18,21 @@
             padding: 10px;
             .list-countries{
                 width: 90%;
+                .country-card{
+                    .figure-country{
+                        img{
+                            height: 270px;
+                        }
+                    }
+                }
             }
+        }
+        /****************************** Countrie Component ************************/
+         .section-btn-return {
+            padding: 30px;
+        }
+        .article-countrie {
+            padding: 30px;
         }
     }
 }
@@ -36,8 +50,20 @@
                 justify-content: space-between;
                 .country-card {
                     width: calc(50% - 15px);
+                    .figure-country{
+                        img{
+                             height: 230px;
+                        }
+                    }
                 }
             }
+        }
+        /****************************** Countrie Component ************************/
+        .section-btn-return {
+            padding: 40px;
+        }
+        .article-countrie {
+            padding: 40px;
         }
     }
 }
@@ -64,6 +90,57 @@
                 justify-content: space-between;
                 .country-card {
                     width: calc(33% - 15px);
+                    .figure-country{
+                        img{
+                            height: 220px;
+                        }
+                    }
+                }
+            }
+        }
+        /****************************** Countrie Component ************************/
+        .section-btn-return {
+            padding: 30px 60px 10px 60px;
+        }
+        .article-countrie {
+            padding: 60px;
+        }
+    }
+}
+
+@media screen and (min-width: 999px) {
+    body {
+        .section-btn-return {
+            padding-bottom: 0px;
+        }
+        .article-countrie {
+            padding-top: 30px;
+            .section-countrie {
+                display: flex;
+                height: 500px;
+                .flag-countrie{
+                    width: 40%;
+                    height: 100%;
+                    margin-bottom: 30px;
+                    .img-flag {
+                        width: 100%;
+                        height: 55%;
+                    }
+                }
+                .details-countrie {
+                    width: 55%;
+                    margin-left: 30px;
+                    .info-countrie {
+                        display: flex;
+                        .countrie-name {
+                            width: 55%;
+                            margin-bottom: 30px;
+                        }
+                        .countrie-lenguages{
+                            width: 45%;
+                            margin-top: 70px;
+                        }
+                    }
                 }
             }
         }
@@ -84,6 +161,47 @@
                 }
             }
         }
+        /****************************** Countrie Component ************************/
+        .section-btn-return {
+            .btn-return {
+                width: 100px;
+                height: 45px;
+            }
+        }
+        .article-countrie {
+            padding-left: 70px;
+            padding-right: 70px;
+            padding-bottom: 30px;
+            .section-countrie {
+                height: 450px;
+                .flag-countrie{
+                    .img-flag {
+                        width: 100%;
+                        height: 70%;
+                    }
+                }
+                .details-countrie {
+                    .info-countrie {
+                        margin-bottom: 10px;
+                        .countrie-name {
+                            margin-bottom: 15px;
+                            h1 {
+                                margin-bottom: 20px;
+                            }
+                        }
+                        .countrie-lenguages{
+                            margin-top: 60px;
+                        }
+                    }
+                    .section-borders { 
+                        margin-bottom: 20px;
+                        .border-countrie { 
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -101,9 +219,6 @@
         }
         .container-countries{
             width: 1420px;
-        }
-        footer{
-            width: 1440px;
         }
     }
 }

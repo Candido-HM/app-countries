@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, AfterViewInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from 'src/app/services/countries.service';
-import { Countrie } from 'src/app/interface/countrie1.interface';
 
 @Component({
   selector: 'app-countrie',
@@ -10,17 +9,30 @@ import { Countrie } from 'src/app/interface/countrie1.interface';
 })
 export class CountrieComponent {
   countrie: any = {};
-  // countrie1: Countrie = [];
 
   constructor( private router: ActivatedRoute,
+              private rout: Router,
               private countriesService: CountriesService){
                 this.countrie = [];
+            
+                // this.router.params.subscribe(params => {
+                //   let nameCode = params['code'];
+                //   this.getCountrieCode(nameCode);
+                // })
+
     this.router.params.subscribe( params => {
       let name = params['name'];
       console.log(name);
       this.getCountrie(name);
     })
   }
+
+  // ngAfterViewInit(): void {
+  //   this.router.params.subscribe(params => {
+  //     let nameCode = params['code'];
+  //     this.getCountrieCode(nameCode);
+  //   })
+  // }
 
   getCountrie(name: string){
     this.countriesService.getCountrie(name)
@@ -33,4 +45,25 @@ export class CountrieComponent {
       }
     )
   }
+
+  // getCountrieCode(code: string) {
+  //   this.countriesService.getCountrieCode(code)
+  //   .subscribe( reponse => {
+  //     this.countrie = reponse
+  //   })
+  // }
+
+  // viewCountrie(code: any){
+  //   // let nameCountrie: any;
+  //   this.countriesService.getCountrieCode(code)
+  //   .subscribe( reponse => {
+  //     this.countrie = reponse
+  //     // nameCountrie = this.countrie[0]['name']['common'];
+  //     // console.log(this.countrie)
+  //     // console.log(nameCountrie)
+  //     this.rout.navigate(['/countrie'], code);
+  //   })
+    
+  // }
+
 }

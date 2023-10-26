@@ -78,7 +78,17 @@
      }
      .article-countrie {
         .section-countrie {
-            color: $white !important;
+            color: $white;
+            .section-borders {
+                .container-buttons {
+                    .btn-borders {
+                        background-color: $dark-blue;
+                        color: white;
+                        box-shadow: 0px 10px 15px 15px #1F2A35;
+                    }
+                }
+               
+            }
         }
     }
 }
