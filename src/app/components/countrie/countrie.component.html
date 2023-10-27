@@ -26,7 +26,7 @@
             <div class="section-borders">
                 <p class="border-countrie"><strong>Border Countries:</strong></p>
                 <div class="container-buttons">
-                    <button class="btn-borders" *ngFor="let border of countrie.borders">{{ border }}</button>
+                    <button (click)="codeCountrie(border)" class="btn-borders" *ngFor="let border of countrie.borders">{{ border }}</button>
                 </div>
             </div>
            

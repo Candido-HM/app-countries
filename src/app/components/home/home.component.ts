@@ -9,12 +9,14 @@ import { debounceTime, distinctUntilChanged, fromEvent, map, startWith } from 'r
 })
 export class HomeComponent implements AfterViewInit {
 
-  @ViewChild('searchInput')
-  inputSearch?: ElementRef;
+  @ViewChild('searchInput') inputSearch?: ElementRef;
+  @ViewChild('region') teams?: ElementRef;
+  selectRegion: string;
 
-  public regiones = [ 'Africa', 'America', 'Asia', 'Europa', 'Oceania'];
+  public regiones = [ 'Africa', 'America', 'Asia', 'Europe', 'Oceania'];
 
   constructor(private _searchService: SearchService){
+    this.selectRegion = '';
   }
 
   ngAfterViewInit(): void {
@@ -25,13 +27,20 @@ export class HomeComponent implements AfterViewInit {
       debounceTime(200),
       distinctUntilChanged()
     ).subscribe(text => this._searchService.emitText(text))
+
+    fromEvent<any>(this.teams?.nativeElement, 'change')
+    .pipe(
+      map(event => event?.target.value),
+        startWith(''),
+        debounceTime(100),
+        distinctUntilChanged()
+    ).subscribe( selected => this._searchService.selectedEmit(selected))
+  
   }
 
   ngOnInit(): void {
-    this._searchService.textObservable.subscribe()
+    this._searchService.textObservable.subscribe();
+    this._searchService.selectedObservable.subscribe();
   }
 
-  selection( region: string ) {
-    console.log(region);
-  }
 }

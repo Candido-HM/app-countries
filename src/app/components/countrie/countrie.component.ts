@@ -27,13 +27,6 @@ export class CountrieComponent {
     })
   }
 
-  // ngAfterViewInit(): void {
-  //   this.router.params.subscribe(params => {
-  //     let nameCode = params['code'];
-  //     this.getCountrieCode(nameCode);
-  //   })
-  // }
-
   getCountrie(name: string){
     this.countriesService.getCountrie(name)
     .subscribe( response => {
@@ -46,12 +39,18 @@ export class CountrieComponent {
     )
   }
 
-  // getCountrieCode(code: string) {
-  //   this.countriesService.getCountrieCode(code)
-  //   .subscribe( reponse => {
-  //     this.countrie = reponse
-  //   })
-  // }
+  codeCountrie(border: string){
+    console.log(border);
+    this.getCountrieCode(border);
+  }
+
+  getCountrieCode(code: string) {
+    this.countriesService.getCountrieCode(code)
+    .subscribe( reponse => {
+      this.countrie = reponse
+      console.log(this.countrie);
+    })
+  }
 
   // viewCountrie(code: any){
   //   // let nameCountrie: any;

@@ -17,6 +17,7 @@ export class CardsComponent implements OnInit{
   public randomCountryIndices: number[] = [];
   public cards: any[] = [];
   text: string = '';
+  selectedItem: string = '';
 
   constructor(private _countriesService: CountriesService,
               private _searchService: SearchService,
@@ -32,7 +33,16 @@ export class CardsComponent implements OnInit{
       if(text === '') {
         this.getCountries();
       }
-    })   
+    })  
+    this._searchService.selectedObservable.subscribe(selectedItem => {
+      this.getCountrieRegion(selectedItem);
+      if(selectedItem === '') {
+        this.getCountries();
+      } 
+      else if(selectedItem == 'all'){
+        this.getCountries();
+      }
+    }) 
   }
 
 
@@ -45,6 +55,7 @@ export class CardsComponent implements OnInit{
       this.getCountries();
     }
   }
+
 
   getCountries(){
     this._countriesService.getCountries().subscribe(
@@ -96,6 +107,17 @@ export class CardsComponent implements OnInit{
     let nameCoutrie;
     nameCoutrie = name;
     this.router.navigate(['/countrie', nameCoutrie]);
+  }
+
+  getCountrieRegion(region : string){
+    this._countriesService.getCountrieRegion(region).subscribe(
+      response => {
+        this.countries = response
+      },
+      error => {
+        console.log(<any>error);
+      }
+    )
   }
 
 }
