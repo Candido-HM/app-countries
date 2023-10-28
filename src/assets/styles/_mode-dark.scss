@@ -91,4 +91,12 @@
             }
         }
     }
+        /****************************** Loading Component ************************/
+        .loading-section{
+            .container-loading {
+                img {
+                    filter: invert(1);
+                }
+            }
+        }
 }

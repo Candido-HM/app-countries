@@ -277,4 +277,16 @@ body {
             }
         }
     }
+
+    /****************************** Loading Component ************************/
+    .loading-section{
+        width: 100%;
+        height: auto;
+        @include centrar();
+        .container-loading {
+            img {
+                width: 250px;
+            }
+        }
+    }
 }

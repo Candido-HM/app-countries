@@ -82,4 +82,12 @@
             }
         }
     }
+    /****************************** Loading Component ************************/
+     .loading-section{
+        .container-loading {
+            img {
+                filter: invert(0.5) sepia(1) hue-rotate(200deg) saturate(1000%);
+            }
+        }
+    }
 }

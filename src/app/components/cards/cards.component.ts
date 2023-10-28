@@ -18,12 +18,14 @@ export class CardsComponent implements OnInit{
   public cards: any[] = [];
   text: string = '';
   selectedItem: string = '';
+  loading: boolean;
 
   constructor(private _countriesService: CountriesService,
               private _searchService: SearchService,
               private router: Router){
     this.countries = [];
     this.url = Global.url;
+    this.loading = true;
   }
 
   ngOnInit(): void {
@@ -67,6 +69,7 @@ export class CardsComponent implements OnInit{
         
         // Mostrar países aleatorios
         this.showRandomCountries();
+        this.loading = false;
       },
       error => {
         console.log(<any>error);
