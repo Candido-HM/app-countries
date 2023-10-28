@@ -9,7 +9,6 @@ Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cl
 - HTML 5
 - Preprocesador SASS
 - Flexbox
-- Semantic HTML5 markup
 - Mobile-first
 - [Angular](https://angular.io/) - Angular framework
 

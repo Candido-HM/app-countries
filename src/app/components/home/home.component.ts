@@ -24,7 +24,7 @@ export class HomeComponent implements AfterViewInit {
     .pipe(
       map(event => event?.target.value),
       startWith(''),
-      debounceTime(200),
+      debounceTime(400),
       distinctUntilChanged()
     ).subscribe(text => this._searchService.emitText(text))
 
