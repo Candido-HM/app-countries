@@ -14,15 +14,9 @@ export class CountrieComponent {
               private rout: Router,
               private countriesService: CountriesService){
                 this.countrie = [];
-            
-                // this.router.params.subscribe(params => {
-                //   let nameCode = params['code'];
-                //   this.getCountrieCode(nameCode);
-                // })
 
     this.router.params.subscribe( params => {
       let name = params['name'];
-      console.log(name);
       this.getCountrie(name);
     })
   }
@@ -31,7 +25,6 @@ export class CountrieComponent {
     this.countriesService.getCountrie(name)
     .subscribe( response => {
         this.countrie = response[0]
-        console.log(this.countrie);
       },
       error => {
         console.log(<any>error);
@@ -40,29 +33,17 @@ export class CountrieComponent {
   }
 
   codeCountrie(border: string){
-    console.log(border);
     this.getCountrieCode(border);
   }
 
   getCountrieCode(code: string) {
+    let name: string
     this.countriesService.getCountrieCode(code)
     .subscribe( reponse => {
-      this.countrie = reponse
-      console.log(this.countrie);
+      this.countrie = reponse[0]
+      name = this.countrie.name.common;
+      this.rout.navigate(['/countrie', name]);
     })
   }
-
-  // viewCountrie(code: any){
-  //   // let nameCountrie: any;
-  //   this.countriesService.getCountrieCode(code)
-  //   .subscribe( reponse => {
-  //     this.countrie = reponse
-  //     // nameCountrie = this.countrie[0]['name']['common'];
-  //     // console.log(this.countrie)
-  //     // console.log(nameCountrie)
-  //     this.rout.navigate(['/countrie'], code);
-  //   })
-    
-  // }
 
 }
